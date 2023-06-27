@@ -5,6 +5,8 @@ can extend Nebari.
 
  - subcommands
     - [hello-world](./examples/nebari_subcommand_hello_world)
+ - stages
+    - [hello-world](./examples/nebari_stage_hello_world)
 
 ## Installation
 
