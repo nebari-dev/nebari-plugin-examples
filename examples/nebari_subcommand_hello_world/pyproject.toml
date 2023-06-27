@@ -1,0 +1,15 @@
+[build-system]
+build-backend = 'setuptools.build_meta'
+requires = [
+    'setuptools',
+]
+
+[project]
+name = "nebari_subcommand_hello_world"
+version = "0.0.1"
+dependencies = [
+    "nebari"
+]
+
+[project.entry-points.nebari]
+nebari-subcommand-hello-world = "nebari_subcommand_hello_world"
