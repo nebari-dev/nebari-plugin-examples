@@ -1,0 +1,18 @@
+import pytest
+
+from _nebari.cli import create_cli
+from typer.testing import CliRunner
+
+runner = CliRunner()
+
+@pytest.mark.parametrize('args, exit_code, content', [
+    # --help
+    (['--help'], 0, ['{{ cookiecutter.project_name }}']),
+    (['{{ cookiecutter.project_name }}', '--help'], 0, ['{{ cookiecutter.project_name }} [OPTIONS]']),
+])
+def test_{{ cookiecutter.project_name }}_stdout(args: list[str], exit_code: int, content: list[str]):
+    app = create_cli()
+    result = runner.invoke(app, args)
+    assert result.exit_code == exit_code
+    for c in content:
+        assert c in result.stdout

@@ -1,0 +1,13 @@
+from nebari.hookspecs import hookimpl
+
+import typer
+
+@hookimpl
+def nebari_subcommand(cli):
+    @cli.command()
+    def {{ cookiecutter.project_name }}(
+        name: str = typer.Option(
+            "World!", help = "This is a sample subcommand"
+        )
+    ):
+        print(f"Hello, {name}")
