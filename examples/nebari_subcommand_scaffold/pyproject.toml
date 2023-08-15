@@ -1,0 +1,18 @@
+[build-system]
+build-backend = 'setuptools.build_meta'
+requires = [
+    'setuptools',
+]
+
+[project]
+name = "nebari_subcommand_scaffold"
+version = "0.0.1"
+requires-python = ">=3.8"
+dependencies = [
+    "nebari",
+    "cookiecutter",
+    "camel-converter",
+]
+
+[project.entry-points.nebari]
+nebari-subcommand-scaffold = "scaffold.scaffold_cmd"
